@@ -8,17 +8,11 @@ class QuizBrain:
     def still_has_question(self):
         return self.question_number < len(self.question_list)
 
-
-
     def next_question(self):
         self.current_question = self.question_list[self.question_number]
         self.question_number += 1
         q_text = html.unescape(self.current_question.text)
         return f'Q.{self.question_number}: {q_text}'
-
-
-
-
 
     def check_answer(self,ans):
         self.current_ans = self.current_question.answer
